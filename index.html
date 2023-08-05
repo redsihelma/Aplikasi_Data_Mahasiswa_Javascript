@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pengelola Data Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Aplikasi Pengelola Data Mahasiswa</h1>
+        <div id="login">
+            <form id="login-form">
+                <h2>Masuk</h2>
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button type="button" onclick="login()">Masuk</button>
+                <h6>Username: admin</h6>
+                <h6>Password: admin</h6>
+            </form>
+            <div id="login-error"></div>
+            <div id="login-loading">
+                <img class="imgload" style src="loading.gif" alt="Loading...">
+            </div>
+        </div>
+        <div id="data-mahasiswa">
+            <div id="success-message" style="display: none;"></div>
+            <button onclick="logout()">Logout</button>
+            <h2>Tambah Data Mahasiswa</h2>
+            <input type="text" id="nim" placeholder="NIM">
+            <input type="text" id="nama" placeholder="Nama">
+            <input type="text" id="prodi" placeholder="Program Studi">
+            <button id="tambah-button" onclick="tambahMahasiswa()">Tambah</button>
+            <button id="update-button" onclick="updateMahasiswa()" style="display: none;">Update</button>
+            <h2 class="datamhs">Data Mahasiswa</h2>
+            <div class="cari">
+                <input type="text" id="search-input" placeholder="Cari NIM, Nama, atau Program Studi">
+                <button class="btncari" onclick="cariMahasiswa()">Cari</button>
+            </div>
+            <table>
+                <tr>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>Program Studi</th>
+                    <th>Aksi</th>
+                </tr>
+                <tbody id="data-mahasiswa-body">
+                    <!-- Data mahasiswa akan ditampilkan di sini -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
